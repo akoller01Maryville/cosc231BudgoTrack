@@ -37,11 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
             labels: ['Red', 'Blue', 'Yellow'],
             datasets: [{
                 label: 'Dataset 1',
-                data: [300, 50, 100],
+                data: [300, 50, 100, 150],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)'
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(54, 162, 24, 0.2)'
                 ],
                 hoverOffset: 4
             }]
