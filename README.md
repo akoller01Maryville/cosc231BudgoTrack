@@ -11,6 +11,9 @@
 **Architecture**
 ![WebArchitecture](/public/images/webArchitecture.png)
 
+## Download Dependencies
+    1- npm install 
+
 ### FrontEnd
 
 #### [HTML](https://www.w3schools.com/html/)
