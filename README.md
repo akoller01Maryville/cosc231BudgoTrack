@@ -2,7 +2,7 @@
 ## BudgoTrack
 ### Authors: Elizabeth VonBergen, Andrew Koller, Keilyn Crayton
 
-**WireFrame**
+**WireFrames**
 ![wireFrame](/public/images/Wireframe.png)
 
 **ERDiagram**
