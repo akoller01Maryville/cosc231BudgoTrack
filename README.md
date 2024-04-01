@@ -2,7 +2,6 @@
 ## BudgoTrack
 ### Authors: Elizabeth VonBergen, Andrew Koller, Keilyn Crayton
 
-
 **WireFrame**
 ![wireFrame](/public/images/Wireframe.png)
 
@@ -11,7 +10,6 @@
 
 **Architecture**
 ![WebArchitecture](/public/images/webArchitecture.png)
-
 
 ### FrontEnd
 
