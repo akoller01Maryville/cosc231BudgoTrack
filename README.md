@@ -5,7 +5,7 @@
 **WireFrames**
 ![wireFrame](/public/images/Wireframe.png)
 
-**ERDiagram**
+**ER-Diagram**
 ![ERDiagram](/public/images/databaseERDiagram.png)
 
 **Architecture**
