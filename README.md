@@ -1,6 +1,10 @@
-COSC 231 Group 4 
+# COSC 231 Group 4
+## BudgoTrack
+## Elizabeth VonBergen, Andrew Koller, Keilyn Crayton
 
-BudgoTrack
 
+**WireFrame**
+![wireFrame](/public/images/wireframe.png)
 
-Week 4 TODO:
+**ERDiagram**
+![ERDiagram](/public/images/databaseERDiagram.png)
