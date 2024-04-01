@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(54, 162, 24, 0.2)'
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(54, 162, 24, 1.0)'
                 ],
                 hoverOffset: 4
             }]
