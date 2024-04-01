@@ -1,0 +1,59 @@
+/* Reset some basic elements */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+/* CSS HEX
+--azure: #007bffff;
+--alice-blue: #e6f7ffff;
+--picton-blue: #00a3e0ff;
+--lapis-lazuli: #005f9eff;
+--jet: #333333ff; */
+
+body {
+    font-family: Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #E6F7FF;
+}
+
+header {
+    background-color: #007BFF;
+    color: #E6F7FF;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+}
+
+main section {
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #007BFF;
+    color: #ffffff;
+}
