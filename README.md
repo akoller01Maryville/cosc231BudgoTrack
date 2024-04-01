@@ -4,7 +4,7 @@
 
 
 **WireFrame**
-![wireFrame](/public/images/wireframe.png)
+![wireFrame](/public/images/Wireframe.png)
 
 **ERDiagram**
 ![ERDiagram](/public/images/databaseERDiagram.png)
