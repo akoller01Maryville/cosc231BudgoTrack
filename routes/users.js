@@ -3,6 +3,15 @@ const router = express.Router();
 const User = require('../models/user') // user model path
 const bcrypt = require('bcryptjs');
 
+// check if user is logged in
+function isAuthenticated(req, res, next) {
+  if (req.session.userId) {
+    next();
+  } else {
+    res.redirect('/index.html') // redirect to login
+  }
+}
+
 // Registration route
 router.post('/register', async function(req, res, next) {
   const { username, password } = req.body;
@@ -48,6 +57,11 @@ router.post('/logout', function(req, res, next) {
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
+});
+
+// profile page router
+router.get('/profile', isAuthenticated, (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/profile.html'))
 });
 
 module.exports = router;
