@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 const User = require('../models/user.js') // user model path
 const bcrypt = require('bcryptjs');
 
@@ -62,6 +63,19 @@ router.get('/', function(req, res, next) {
 // profile page router
 router.get('/profile', isAuthenticated, function(req, res) {
   res.sendFile(path.join(__dirname, '../public/profile.html'))
+});
+
+// fetch list of users
+router.get('/list', isAuthenticated, async (req, res) => {
+  try {
+      const users = await User.findAll({
+        attributes: { exclude: ['password'] }
+      });
+      res.json(users);
+  } catch (error) {
+    console.error('Failed to fetch users: ', error);
+    res.status(500).send('Server error');
+  }
 });
 
 module.exports = router;
