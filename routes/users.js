@@ -60,7 +60,7 @@ router.get('/', function(req, res, next) {
 });
 
 // profile page router
-router.get('/profile', isAuthenticated, (req, res) => {
+router.get('/profile', isAuthenticated, function(req, res) {
   res.sendFile(path.join(__dirname, '../public/profile.html'))
 });
 
