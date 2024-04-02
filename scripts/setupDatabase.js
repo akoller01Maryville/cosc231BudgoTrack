@@ -1,6 +1,6 @@
 // run to initialize database
-const { sequelize } = require('../models');
-
+const { sequelize, User} = require('../models');
+const bcrypt = require('bcryptjs');
 
 async function initializeDatabase() {
     try {
@@ -14,5 +14,24 @@ async function initializeDatabase() {
     }
 }
 
+async function createTestData() {
+    try {
+        await sequelize.sync();
+
+        // Create a test user with hashed password
+        const hashedPassword = await bcrypt.hash('password', 10);
+        await User.create({
+            username: 'admin',
+            password: hashedPassword,
+        });
+
+        console.log('Test user created successfully.');
+    } catch (error) {
+        console.error('Failed to create test data:', error);
+    }
+}
+
 //change parameter to True if want to reinitialize clean database.
 initializeDatabase();
+
+createTestData();

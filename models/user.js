@@ -8,10 +8,6 @@ module.exports = (sequelize, DataTypes) => {
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        pushNotifications: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
         }
     });
 
