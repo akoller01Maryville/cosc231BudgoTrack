@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user') // user model path
+const User = require('../models/user.js') // user model path
 const bcrypt = require('bcryptjs');
 
 // check if user is logged in

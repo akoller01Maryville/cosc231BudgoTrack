@@ -3,9 +3,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const sequelize = require('/models/').sequelize; //import sequelize instance
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const sequelize = require('./models').sequelize; //import sequelize instance
 
 // require route modules
 const indexRouter = require('./routes/index');
