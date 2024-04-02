@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        pushNotifications: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        }
     });
 
     return User;
