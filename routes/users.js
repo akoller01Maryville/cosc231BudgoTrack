@@ -34,13 +34,18 @@ router.post('/register', async function(req, res, next) {
 // Login route
 router.post('/login', async function(req, res, next) {
   const { username, password } = req.body;
-  const user = await User.findOne({ where: { username } });
+  try {
+    const user = await User.findOne({ where: { username } });
 
-  if (user && await bcrypt.compare(password, user.password)) {
-    req.session.userId = user.id; // Set a session property
-    res.redirect('/profile.html'); // Redirect to a page
-  } else {
-    res.status(401).send('Invalid credentials');
+    if (user && await bcrypt.compare(password, user.password)) {
+      req.session.userId = user.id; // Set a session property
+      res.redirect('/profile.html'); // Redirect to a page
+    } else {
+      res.status(401).send('Invalid credentials');
+    }
+  } catch (error) {
+    console.error('Login error', error);
+    res.status(500).send('An error occurred during login')
   }
 });
 

@@ -15,7 +15,7 @@ const app = express();
 
 //user session initialization
 app.use(session({
-    secret: 'andrew', //update with real key later
+    secret: 'andrew', //TODO:update with real key later
     store: new SequelizeStore({
         db: sequelize, //sequelize instance from user.js model
     }),
