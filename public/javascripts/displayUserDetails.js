@@ -13,5 +13,6 @@ fetch('/users/details')
     .catch(error => {
         console.error('Error:', error);
         // Handle not logged in state, maybe redirect to login page
-        window.location.href = '/login.html';
+        // window.location.href = '/index.html';
+
     });

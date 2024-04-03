@@ -21,6 +21,7 @@ app.use(session({
     }),
     resave: false, //false = unnecessary session updates
     saveUninitialized: false, // no session until something is stored
+    cookie: { secure: 'auto', maxAge: 24 * 60 * 60 * 1000 }, // cookie for browser
     checkExpirationInterval: 15 * 60 * 1000, //cleanup expired sessions in milliseconds
     expiration: 24 * 60 * 60 * 1000 // max age of sessions in milliseconds
 }));
@@ -34,6 +35,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // route configs
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/users', usersRouter); // mounts users routes at /users
 
 module.exports = app;

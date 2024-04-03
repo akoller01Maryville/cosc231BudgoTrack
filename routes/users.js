@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs');
 
 // check if user is logged in
 function isAuthenticated(req, res, next) {
+  console.log(req.session)
   if (req.session.userId) {
     next();
   } else {
