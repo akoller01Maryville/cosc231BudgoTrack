@@ -89,4 +89,12 @@ router.get('/details', isAuthenticated, async (req, res) => {
   }
 });
 
+router.get('/status', (req, res) => {
+  if(req.session.userID) {
+    res.json({loggedIn: true});
+  } else {
+    res.json({ loggedIn: false})
+  }
+})
+
 module.exports = router;

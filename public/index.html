@@ -11,24 +11,34 @@
         <p><a  href="/chart.html">Chart</a></p>
     </section>
 
-    <h2>Login</h2>
-    <form id="loginForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Login</button>
-    </form>
+    <div id="userDetails"></div>
 
-    <h2>Register</h2>
-    <form id="registerForm">
-        <label for="registrationUsername">Username:</label>
-        <input type="text" id="registrationUsername" name="username" required>
-        <label for="registrationPassword">Password:</label>
-        <input type="password" id="registrationPassword" name="password" required>
-        <button type="submit">Register</button>
-    </form>
+    <div id="loginSection">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
+    <div id="registrationSection">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <label for="registrationUsername">Username:</label>
+            <input type="text" id="registrationUsername" name="username" required>
+            <label for="registrationPassword">Password:</label>
+            <input type="password" id="registrationPassword" name="password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+
+
+    <script src="javascripts/displayUserDetails.js"></script>
+    <script src="javascripts/loggedInStatus.js"></script>
     <script src="javascripts/loginForm.js"></script>
     <script src="javascripts/registerUser.js"></script>
     <script src="javascripts/script.js"></script>
