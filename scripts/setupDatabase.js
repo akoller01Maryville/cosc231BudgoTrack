@@ -14,14 +14,15 @@ async function initializeDatabase() {
     }
 }
 
-async function createTestData() {
+async function createTestData(username, password) {
     try {
+
         await sequelize.sync();
 
         // Create a test user with hashed password
-        const hashedPassword = await bcrypt.hash('password', 10);
+        const hashedPassword = await bcrypt.hash({ password }, 10);
         await User.create({
-            username: 'admin',
+            username: { username },
             password: hashedPassword,
         });
 
@@ -32,6 +33,6 @@ async function createTestData() {
 }
 
 //change parameter to True if want to reinitialize clean database.
-initializeDatabase();
+//initializeDatabase();
 
-#createTestData();
+createTestData("admin2", "password2");
