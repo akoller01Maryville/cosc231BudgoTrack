@@ -1,3 +1,4 @@
+// sequelize's way of creating a database table I think>
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define('user', {
         username: {
