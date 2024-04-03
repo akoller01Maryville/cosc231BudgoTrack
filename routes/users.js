@@ -9,7 +9,8 @@ function isAuthenticated(req, res, next) {
   if (req.session.userId) {
     next();
   } else {
-    res.redirect('/index.html') // redirect to login
+    res.status(401).json({message: "Not authenticated"});
+    //res.redirect('/index.html') // redirect to login
   }
 }
 
@@ -70,15 +71,19 @@ router.get('/profile', isAuthenticated, function(req, res) {
   res.sendFile(path.join(__dirname, '../public/profile.html'))
 });
 
-// fetch list of users
-router.get('/list', isAuthenticated, async (req, res) => {
+// get user details
+router.get('/details', isAuthenticated, async (req, res) => {
   try {
-      const users = await User.findAll({
-        attributes: { exclude: ['password'] }
-      });
-      res.json(users);
+    const user = await User.findByPk(req.session.userId, {
+      attributes: ['username', 'id'] // Specify attributes you want to send back
+    });
+    if (user) {
+      res.json(user);
+    } else {
+      res.status(404).send('User not found');
+    }
   } catch (error) {
-    console.error('Failed to fetch users: ', error);
+    console.error('Error fetching user details:', error);
     res.status(500).send('Server error');
   }
 });
