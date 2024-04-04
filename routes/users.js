@@ -17,12 +17,13 @@ function isAuthenticated(req, res, next) {
 
 // Registration route
 router.post('/register', async function(req, res, next) {
-  const { username, password } = req.body;
+  const { username, email, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
 
   try {
     const newUser = await User.create({
       username,
+      email,
       password: hashedPassword
     });
     req.session.userId = newUser.id; // Automatically log in the new user
