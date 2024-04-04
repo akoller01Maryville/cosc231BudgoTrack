@@ -10,6 +10,17 @@ const sequelize = new Sequelize('testDB', 'gnawtough', "#RoED#7R$9pK%7KFVXvBTMcP
 //import models TODO: add all other models to this and add to exports
 const User = require('./user')(sequelize, Sequelize.DataTypes);
 
+// establish relationships TODO: add relationships for each tables based on chart
+// example 1:
+// User.hasMany(Receipt);
+// Receipt.belongsTo(User);
+
+// sync database
+sequelize.sync({ force: true }).then(() => {
+    console.log("Database & tables created!");
+});
+
+// TODO: export all models
 module.exports = {
     sequelize,
     User
