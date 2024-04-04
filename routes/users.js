@@ -62,11 +62,6 @@ router.post('/logout', function(req, res, next) {
   })
 })
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
 // profile page router
 router.get('/profile', isAuthenticated, function(req, res) {
   res.sendFile(path.join(__dirname, '../public/profile.html'))
@@ -90,11 +85,16 @@ router.get('/details', isAuthenticated, async (req, res) => {
 });
 
 router.get('/status', (req, res) => {
-  if(req.session.userID) {
-    res.json({loggedIn: true});
+  if(req.session.userId) {
+    res.json({ loggedIn: true});
   } else {
     res.json({ loggedIn: false})
   }
 })
+
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
 
 module.exports = router;
