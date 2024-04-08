@@ -1,19 +1,18 @@
 module.exports = (sequelize, DataTypes) => {
     const Transaction = sequelize.define('receipt', {
-        PurchaseDate: {
-            type: DataTypes.DATE,
-            unique: false,
-            allowNull: false,
-        },
-
-        TotalAmount: {
+        Amount: {
             type: DataTypes.Decimal(10,2),
             unique: false,
             allowNull: false,
         },
 
-        StoreName: {
+        Description: {
             type: DataTypes.STRING,
+            allowNull: false,
+        },
+
+        TransactionDate: {
+            type: DataTypes.DATE,
             unique: false,
             allowNull: false,
         },
