@@ -25,6 +25,37 @@ const Visualization = require('./visualization')(sequelize, Sequelize.DataTypes)
 // User.hasMany(Receipt);
 // Receipt.belongsTo(User);
 
+// User relationships
+User.hasMany(Receipt);
+Receipt.belongsTo(User);
+
+User.hasMany(Budget);
+Budget.belongsTo(User);
+
+User.hasOne(Analysis);
+Analysis.belongsTo(User);
+
+User.hasOne(UserPreferences);
+UserPreferences.belongsTo(User);
+
+User.hasOne(UserProfile);
+UserProfile.belongsTo(User);
+
+// Receipts relationships
+Receipt.hasMany(Transaction);
+Transaction.belongsTo(Receipt);
+
+Category.hasMany(Transaction);
+Transaction.belongsTo(Category);
+
+// Budget Relationships
+Budget.hasMany(BudgetDetails);
+BudgetDetails.belongsTo(Budget);
+
+// Analysis Relationships
+Analysis.hasMany(Visualization);
+Visualization.belongsTo(Analysis);
+
 // sync database
 sequelize.sync({ force: true }).then(() => {
     console.log("Database & tables created!");
