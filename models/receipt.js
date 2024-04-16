@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         },
 
         TotalAmount: {
-            type: DataTypes.Decimal(10,2),
+            type: DataTypes.DECIMAL(10,2),
             unique: false,
             allowNull: false,
         },

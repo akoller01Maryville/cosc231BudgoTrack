@@ -1,10 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
-    const budgetdetail = sequelize.define('user', {
+    const BudgetDetail = sequelize.define('budgetdetail', {
         AllocatedAmount: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
         },
     });
 
-    return budgetdetail;
+    return BudgetDetail;
 };

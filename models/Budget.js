@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const budget = sequelize.define('user', {
+    const Budget = sequelize.define('budget', {
         StartDate: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -9,9 +9,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         TotalAmount: {
-            type: DataTypes.DECIMAL(10,2),
+            type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
         },
     });
 
-    return User;
+    return Budget;
+};

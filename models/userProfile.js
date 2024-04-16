@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const UserProfile = sequelize.define('receipt', {
+    const UserProfile = sequelize.define('userprofile', {
         FirstName: {
             type: DataTypes.STRING,
         },
@@ -11,8 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         DateOfBirth: {
             type: DataTypes.DATE,
         },
-        // TODO: add other columns for this table
     });
 
-    return Receipt;
+    return UserProfile;
 };

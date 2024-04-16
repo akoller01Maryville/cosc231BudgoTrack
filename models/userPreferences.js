@@ -1,10 +1,9 @@
 module.exports = (sequelize, DataTypes) => {
-    const UserPreferences = sequelize.define('receipt', {
+    const UserPreferences = sequelize.define('userpreferences', {
         EnablePushNotifications: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },
-
         PrivateAccount: {
             type: DataTypes.BOOLEAN,
             allowNull: false,

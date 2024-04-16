@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-    const Transaction = sequelize.define('receipt', {
+    const Transaction = sequelize.define('transaction', {
         Amount: {
-            type: DataTypes.Decimal(10,2),
+            type: DataTypes.DECIMAL(10,2),
             unique: false,
             allowNull: false,
         },
@@ -16,8 +16,7 @@ module.exports = (sequelize, DataTypes) => {
             unique: false,
             allowNull: false,
         },
-        // TODO: add other columns for this table
     });
 
-    return Receipt;
+    return Transaction;
 };

@@ -11,7 +11,7 @@ function isAuthenticated(req, res, next) {
     next();
   } else {
     res.status(401).json({message: "Not authenticated"});
-    //res.redirect('/index.html') // redirect to login
+    res.redirect('/index.html') // redirect to login
   }
 }
 
