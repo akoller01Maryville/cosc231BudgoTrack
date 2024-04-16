@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Visualization = sequelize.define('receipt', {
+    const Visualization = sequelize.define('visualization', {
         Type: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // TODO: add other columns for this table
+
     });
 
     return Visualization;

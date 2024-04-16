@@ -1,12 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
-    const UserPreferences = sequelize.define('receipt', {
+    const UserPreferences = sequelize.define('userpreferences', {
         EnablePushNotifications: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.BOOL,
             allowNull: false,
         },
 
         PrivateAccount: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.BOOL,
             allowNull: false,
         },
         // TODO: add other columns for this table
