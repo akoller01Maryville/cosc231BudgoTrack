@@ -56,6 +56,13 @@ BudgetDetails.belongsTo(Budget);
 Analysis.hasMany(Visualization);
 Visualization.belongsTo(Analysis);
 
+// test connection
+sequelize.authenticate()
+    .then(() => console.log('Connection has been established successfully.'))
+    .catch(err => console.error('Unable to connect to the database:', err));
+
+
+
 // sync database
 sequelize.sync({ force: true }).then(() => {
     console.log("Database & tables created!");
@@ -64,5 +71,14 @@ sequelize.sync({ force: true }).then(() => {
 // TODO: export all models
 module.exports = {
     sequelize,
-    User
+    User,
+    Analysis,
+    Budget,
+    BudgetDetails,
+    Category,
+    Receipt,
+    Transaction,
+    UserProfile,
+    UserPreferences,
+    Visualization,
 };
