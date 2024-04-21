@@ -1,13 +1,16 @@
-/* TODO: style receipt item list
-        NOTE: use this website (https://www.w3schools.com/howto/howto_js_todolist.asp) for reference :)
-
-    TODO: style receipt.html based on wireframes
+/* TODO: style receipt.html based on wireframes
+        - style receipt item list
+            NOTE: use this website (https://www.w3schools.com/howto/howto_js_todolist.asp) for reference :)
+        - use flexbox for receipt item list, display next to input
 
     TODO: style index.html based on wireframes
 
     TODO: find font to use throughout the pages [approve with everyone?]
 
     TODO: style .verticalLine more cleanly
+
+    TODO: space header elements correctly
+        - flexbox?
 */
 
 body {
