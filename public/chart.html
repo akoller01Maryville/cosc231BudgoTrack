@@ -11,19 +11,20 @@
 </head>
 
 <body>
-    <section>
+    <section id="userHeading">
         <button onclick="window.location.href='profile.html'">User Settings</button>
+
+        <div id="userDetails"></div>
+        <img src="images/defaultUser.jpeg" alt="User Profile Picture">
     </section>
 
-    <div id="userDetails"></div>
-    <img src="images/defaultUser.jpeg" alt="User Profile Picture">
-
-    <section>
+    <section id="chartHeading">
         <h1>Charts</h1>
-    </section>
-    <section>
-        <canvas id="chart1" width="100" height="100"></canvas>
-        <canvas id="chart2" width="100" height="100"></canvas>
+        
+        <div id="chartDisplay">
+            <canvas id="chart1"></canvas>
+            <canvas id="chart2"></canvas>
+        </div>
     </section>
 
     <section>
