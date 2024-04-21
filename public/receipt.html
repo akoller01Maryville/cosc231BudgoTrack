@@ -14,7 +14,7 @@
         <button onclick="window.location.href='chart.html'">Return to Charts</button>
         <h1>New Receipt</h1>
     </header>
-    
+
     <section>
         <!--date picker-->
         <label for="purchase">Purchase Date:</label>
@@ -40,8 +40,16 @@
         <!--description-->
         <label for="itemdesc">Item Description:</label>
         <input type="text" id="itemdesc" name="itemdesc">
-        <button type="button">Add</button>
+        <button type="button" onclick="newElement()">Add</button>
+
+        <ul id="myUL">      <!-- this should be empty by default, items in there just for styling purposes-->
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
     </section>
+
+    <script src="javascripts/receiptItemList.js"></script>
 </body>
 
 </html>
