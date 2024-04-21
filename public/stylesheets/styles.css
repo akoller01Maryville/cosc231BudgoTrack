@@ -43,19 +43,24 @@ footer {
 }
 
 /***** Classes *****/
-
+.flexContainer {
+    display: flex;
+}
 /***** ID's *****/
+#userHeading img {
+    max-width: 70%;
+}
+
 #userHeading {          /* left-aligned user info */
+    flex: 1;
+    text-align: center;
     background-color: #4FB051;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
-#userHeading img {
-    max-width: 15%;
-}
-
 #chartHeading {         /* right-aligned charts */
+    flex: 3;
     text-align: center;
     background-color: #4FB051;
     font-size: 1.5rem;
