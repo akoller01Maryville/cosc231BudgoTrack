@@ -16,31 +16,33 @@
     </header>
 
     <section>
-        <!--date picker-->
-        <label for="purchase">Purchase Date:</label>
-        <input type="date" id="purchase" name="purchase">
-        <!--total $ amount-->
-        <label for="total">Total Amount:</label>
-        <input type="number" id="total" name="total" min="0" step="0.01">
-        <!--store name-->
-        <label for="store">Store Name:</label>
-        <input type="text" id="store" name="store">
-        
-        <button type="submit">Save</button>
+        <form id="receiptForm">
+            <label for="purchase">Purchase Date:</label>
+            <input type="date" id="purchase" name="purchase" required>
+            
+            <label for="total">Total Amount:</label>
+            <input type="number" id="total" name="total" min="0" step="0.01" required>
+            
+            <label for="store">Store Name:</label>
+            <input type="text" id="store" name="store" required>
+            
+            <button type="submit">Save</button>
+        </form>
     </section>  
         <hr>
     <section>    
-        <h2>Add Items</h2>
-        <!--name-->
-        <label for="itemname">Item Name:</label>
-        <input type="text" id="itemname" name="itemname">
-        <!--price-->
-        <label for="itemprice">Item Price:</label>
-        <input type="number" id="itemprice" name="itemprice" min="0" step="0.01">
-        <!--description-->
-        <label for="itemdesc">Item Description:</label>
-        <input type="text" id="itemdesc" name="itemdesc">
-        <button type="button" onclick="newElement()">Add</button>
+        <form id="receiptItemForm">
+            <h2>Add Items</h2>
+            <label for="itemname">Item Name:</label>
+            <input type="text" id="itemname" name="itemname">
+            
+            <label for="itemprice">Item Price:</label>
+            <input type="number" id="itemprice" name="itemprice" min="0" step="0.01">
+            
+            <label for="itemdesc">Item Description:</label>
+            <input type="text" id="itemdesc" name="itemdesc">
+            <button type="button" onclick="newElement()">Add</button>
+        </form>
 
         <ul id="myUL">      <!-- this should be empty by default, items in there just for styling purposes-->
             <li>Item 1</li>
