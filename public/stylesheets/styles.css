@@ -17,7 +17,7 @@ body {
     background-color: #fffaf0;
 }
 
-header {    /* all pages have: button -> title. title edited below */
+header {    /* NOTE: all pages have: button -> title -> empty div inside header. these must exist in order to display correctly */
     background-color: #4FB051;
     color: #E6F7FF;
     padding: 2rem;
@@ -26,18 +26,20 @@ header {    /* all pages have: button -> title. title edited below */
     justify-content: space-between;
 }
 
-header button {     /* header back button: LEFT */
-    flex: 0.1;
+header button {             /* header back button: LEFT */
+    flex: 0.15;
 }
 
-header h1 {     /* title: CENTER */
+header h1 {                 /* title: CENTER */
+    font-size: 1.5rem;
+    
     flex-basis: 50%;
     margin-bottom: 0.5rem;
     text-align: center;
 }
 
-header div { /* empty space: RIGHT */
-    flex: 0.1;
+header div {                /* empty space: RIGHT */
+    flex: 0.15;
     visibility: hidden;
 }
 
