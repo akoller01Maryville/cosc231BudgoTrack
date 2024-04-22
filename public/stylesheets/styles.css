@@ -8,9 +8,6 @@
     TODO: find font to use throughout the pages [approve with everyone?]
 
     TODO: style .verticalLine more cleanly
-
-    TODO: space header elements correctly
-        - flexbox?
 */
 
 body {
@@ -20,17 +17,28 @@ body {
     background-color: #fffaf0;
 }
 
-header {
+header {    /* all pages have: button -> title. title edited below */
     background-color: #4FB051;
     color: #E6F7FF;
-    text-align: center;
     padding: 2rem;
+
     display: flex;
-    align-items: center;
+    justify-content: space-between;
 }
 
-header h1 {
+header button {     /* header back button: LEFT */
+    flex: 0.1;
+}
+
+header h1 {     /* title: CENTER */
+    flex-basis: 50%;
     margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+header div { /* empty space: RIGHT */
+    flex: 0.1;
+    visibility: hidden;
 }
 
 main {
@@ -62,6 +70,10 @@ footer {
     width: 1px; /* Line width */
     background-color: black; /* Line color */
     display: inline;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 /***** ID's *****/
