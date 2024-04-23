@@ -30,7 +30,7 @@
         if (nameInput === '' || priceInput === '' || descInput === '') {
             alert("You must fill out all of the fields!");
         } else {
-            document.getElementById("myUL").appendChild(li);
+            document.getElementById("itemUL").appendChild(li);
         }
         document.getElementById("itemname").value = "";
         var span = document.createElement("SPAN");
