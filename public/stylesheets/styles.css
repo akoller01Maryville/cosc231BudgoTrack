@@ -1,6 +1,8 @@
 /* TODO: style receipt.html based on wireframes
         - style receiptForm
-        - style receiptItemForm
+            * grid? 2x2?
+            * style text
+        - style text in item form
         - maybe mess around more with item list if have time ?
 
     TODO: style index.html based on wireframes
@@ -86,6 +88,10 @@ footer {
     width: 1px; /* Line width */
     background-color: black; /* Line color */
     display: inline;
+}
+
+.currencyInput {
+    visibility: visible;
 }
 
 .center {
@@ -182,6 +188,7 @@ footer {
     background-image: -o-linear-gradient(top, #616161, #4a4a4a);
     background-image: linear-gradient(to bottom, #616161, #4a4a4a);
     text-decoration: none;
+    cursor: pointer;
 }
 
 /*** receipt.html ***/
@@ -190,8 +197,35 @@ footer {
     flex: 1;
     flex-direction: column;
     align-items: left;
+    gap: 5px;
 
-    gap: 1rem;
+    margin-left: 3%;
+    margin-right: 3%;
+} #receiptItemForm #itemname { /* first input */
+    width: 50%;
+    padding: 0.3rem;
+    font-size: 1rem;
+    margin-bottom: 3%;
+} #receiptItemForm #itemprice { /* second input */
+    width: 20%;
+    padding: 0.1rem;
+    font-size: 1rem;
+    margin-bottom: 3%;
+} #receiptItemForm #itemdesc { /* third input */
+    width: 100%;
+    height: 10rem;
+    font-size: 1rem;
+} #receiptItemForm button {
+    width: 20%;
+    margin-top: 3%;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    background-color: #4FB051;
+    color: #E6F7FF;
+    border: none;
+} #receiptItemForm button:hover {
+    background-color: #3A8E3A;
+    cursor: pointer;
 }
 
 #itemUL {

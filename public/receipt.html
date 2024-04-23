@@ -22,7 +22,7 @@
             <input type="date" id="purchase" name="purchase" required>
             
             <label for="total">Total Amount:</label>
-            <input type="number" id="total" name="total" min="0" step="0.01" required>
+            <span class="currencyInput">$ <input type="number" id="total" name="total" min="0" step="0.01" required></span>
             
             <label for="store">Store Name:</label>
             <input type="text" id="store" name="store" required>
@@ -38,10 +38,10 @@
             <input type="text" id="itemname" name="itemname">
             
             <label for="itemprice">Item Price:</label>
-            <input type="number" id="itemprice" name="itemprice" min="0" step="0.01">
+            <span class="currencyInput">$ <input type="number" id="itemprice" name="itemprice" min="0" step="0.01" value="0.00"></span>
             
             <label for="itemdesc">Item Description:</label>
-            <input type="text" id="itemdesc" name="itemdesc">
+            <textarea id="itemdesc" name="itemdesc"></textarea>
             <button type="button" onclick="newElement()">Add</button>
         </form>
 
