@@ -1,9 +1,4 @@
-/* TODO: style receipt.html based on wireframes
-        - style receiptForm
-            * grid? 2x2?
-            * style text
-        - style text in item form
-        - maybe mess around more with item list if have time ?
+/*  TO-DO LIST (in priority order, high to low):
 
     TODO: style index.html based on wireframes
 
@@ -12,7 +7,12 @@
     TODO: style chart.html
         - find out how to fill in info in chart.html grid section
         - style buttons
+        - style text (bold, larger, etc...)
         - style .verticalLine more cleanly
+
+    TODO: style receipt.html based on wireframes
+        - style text (bold, larger, etc...)
+        - clean up overall, if time
 */
 
 * {         /* applies to every element */
@@ -77,11 +77,19 @@ footer {
     display: flex;
 }
 
-.gridContainer {
+.gridContainerActivity {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     row-gap: 1rem;
+}
+
+.gridContainerReceipt {
+    display: grid;
+    grid-template-columns: 2, 1fr;
+    grid-template-rows: 2, 1fr;
+    gap: 10px;
+    margin-left: 3%;
 }
 
 .verticalLine {
@@ -264,6 +272,52 @@ footer {
 } .close:hover {
     background-color: #f44336;
     color: white;
+}
+
+#dateSection {
+    grid-area: 1 / 1 / 2 / 2;
+    margin-top: 3%;
+    margin-bottom: 3%;
+
+    display: flex;
+    flex-direction: column;
+} #dateSection input {
+    width: 20%;
+    padding: 0.1rem;
+    font-size: 1rem;
+}
+
+#totalSection {
+    grid-area: 1 / 2 / 2 / 3;
+    margin-top: 3%;
+    margin-bottom: 3%;
+
+    display: flex;
+    flex-direction: column;
+} #totalSection input {
+    width: 20%;
+    padding: 0.1rem;
+    font-size: 1rem;
+}
+
+#storeSection {
+    grid-area: 2 / 1 / 3 / 2;
+    margin-bottom: 3%;
+    justify-content: flex-start;
+
+    display: flex;
+    flex-direction: column;
+} #storeSection input {
+    width: 50%;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+#submitButton {
+    grid-area: 2 / 2 / 3 / 3;
+    text-align: center;
+    padding-top: 8%;
+    padding-right: 30%;
 }
 
 /* Hide the content that should only be visible when the user is logged in

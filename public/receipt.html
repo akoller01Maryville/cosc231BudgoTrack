@@ -16,21 +16,29 @@
         <div></div>
     </header>
 
-    <section>
-        <form id="receiptForm">
-            <label for="purchase">Purchase Date:</label>
-            <input type="date" id="purchase" name="purchase" required>
+        <form id="receiptForm" class="gridContainerReceipt">
+            <div id="dateSection">
+                <label for="purchase">Purchase Date:</label>
+                <input type="date" id="purchase" name="purchase" required>
+            </div>
             
-            <label for="total">Total Amount:</label>
-            <span class="currencyInput">$ <input type="number" id="total" name="total" min="0" step="0.01" required></span>
+            <div id="totalSection">
+                <label for="total">Total Amount:</label>
+                <span class="currencyInput">$ <input type="number" id="total" name="total" min="0" step="0.01" value="0.00" required></span>
+            </div>
+
+            <div id="storeSection">
+                <label for="store">Store Name:</label>
+                <input type="text" id="store" name="store" required>
+            </div>
             
-            <label for="store">Store Name:</label>
-            <input type="text" id="store" name="store" required>
-            
-            <button type="submit">Save</button>
+            <div id="submitButton">
+                <button type="submit">Save</button>
+            </div>
         </form>
-    </section>  
+
         <hr>
+
     <div class="flexContainer">    
         <form id="receiptItemForm">
             <h2>Add Items</h2>
