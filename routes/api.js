@@ -5,8 +5,7 @@ const { Receipt, Transaction } = require('../models');
 // POST /api/receipts
 router.post('/receipts', async (req, res) => {
     try {
-        // Assuming `userId` is stored in session upon user login
-        const userId = req.session.userId; // Correctly access session data
+        const userId = req.session.userId;
         const { PurchaseDate, TotalAmount, StoreName, items } = req.body;
 
         if (!userId) {
@@ -17,19 +16,19 @@ router.post('/receipts', async (req, res) => {
             PurchaseDate,
             TotalAmount,
             StoreName,
-            userId // Use the userId from session
+            userId
         });
+        // create item
+        const transactions = items.map(item => ({
+            Name: item.Name,
+            Amount: item.Amount,
+            Description: item.Description,
+            ReceiptId: newReceipt.id  // Link each transaction to the receipt
+        }));
+        // upload items
+        await Transaction.bulkCreate(transactions);
 
-        for (const item of items) {
-            await Transaction.create({
-                ReceiptId: newReceipt.id,
-                Name: item.Name,
-                Amount: item.Amount,
-                Description: item.Description
-            });
-        }
-
-        res.json({ status: 'success', message: 'Receipt saved successfully!' });
+        res.json({ status: 'success', message: 'Receipt and transactions saved successfully!' });
     } catch (error) {
         console.error('Server error:', error);
         res.status(500).json({ error: error.message });
