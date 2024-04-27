@@ -19,7 +19,6 @@ router.post('/receipts', async (req, res) => {
                 Name: item.Name,
                 Amount: item.Amount,
                 Description: item.Description,
-                TransactionDate: item.TransactionDate
             });
         }
 
