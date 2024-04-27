@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="upload receipt to database">
-      <change beforePath="$PROJECT_DIR$/public/javascripts/receiptUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/receiptUpload.js" afterDir="false" />
+    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="error handling for upload">
+      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +96,7 @@
       <workItem from="1713283131602" duration="16000" />
       <workItem from="1713283162196" duration="1478000" />
       <workItem from="1713989889021" duration="2009000" />
-      <workItem from="1714249245247" duration="2446000" />
+      <workItem from="1714249245247" duration="2529000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -242,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714251618937</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="error handling for upload">
+      <option name="closed" value="true" />
+      <created>1714251722866</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1714251722866</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +278,7 @@
     <MESSAGE value="fix .gitignore" />
     <MESSAGE value="update README.md" />
     <MESSAGE value="upload receipt to database" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload receipt to database" />
+    <MESSAGE value="error handling for upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="error handling for upload" />
   </component>
 </project>

@@ -27,7 +27,8 @@ app.post('/api/receipts', async (req, res) => {
 
         res.send({ status: 'success', message: 'Receipt saved successfully!' });
     } catch (error) {
-        res.status(500).send({ status: 'error', message: error.message });
+        console.error('Server error:', error);
+        res.status(500).json({ error: error.message });  // Send back a JSON response
     }
 });
 
