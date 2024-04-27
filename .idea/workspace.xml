@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="error handling for upload">
+    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="serverside error handling">
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +97,7 @@
       <workItem from="1713283131602" duration="16000" />
       <workItem from="1713283162196" duration="1478000" />
       <workItem from="1713989889021" duration="2009000" />
-      <workItem from="1714249245247" duration="2529000" />
+      <workItem from="1714249245247" duration="2823000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -250,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714251722866</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="serverside error handling">
+      <option name="closed" value="true" />
+      <created>1714251797969</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1714251797969</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +288,7 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="upload receipt to database" />
     <MESSAGE value="error handling for upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="error handling for upload" />
+    <MESSAGE value="serverside error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="serverside error handling" />
   </component>
 </project>
