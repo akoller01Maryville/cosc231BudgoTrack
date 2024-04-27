@@ -27,7 +27,7 @@ router.post('/register', async function(req, res, next) {
       password: hashedPassword
     });
     req.session.userId = newUser.id; // Automatically log in the new user
-    res.redirect('/profile.html'); // Redirect to a page
+    res.redirect('/chart.html'); // Redirect to a page
   } catch (error) {
     // Handle errors, maybe the username is taken
     res.status(500).send(error.message);
@@ -42,7 +42,7 @@ router.post('/login', async function(req, res, next) {
 
     if (user && await bcrypt.compare(password, user.password)) {
       req.session.userId = user.id; // Set a session property
-      res.redirect('/profile.html'); // Redirect to a page
+      res.redirect('/chart.html'); // Redirect to a page
     } else {
       res.status(401).send('Invalid credentials');
     }

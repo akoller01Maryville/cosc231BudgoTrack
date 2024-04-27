@@ -10,6 +10,7 @@ const sequelize = require('./models').sequelize; //import sequelize instance
 // require route modules
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const apiRouter = require('./routes/api');
 
 const app = express();
 
@@ -36,5 +37,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // route configs
 app.use('/', indexRouter);
 app.use('/users', usersRouter); // mounts users routes at /users
+app.use('/api', apiRouter);
 
 module.exports = app;

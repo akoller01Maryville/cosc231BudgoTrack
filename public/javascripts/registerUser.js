@@ -13,7 +13,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
 
         if (response.ok) {
             // Registration was successful
-            window.location.href = '/profile.html'; // Or wherever you wish to redirect upon successful registration
+            window.location.href = '/chart.html'; // Or wherever you wish to redirect upon successful registration
         } else {
             // Handle registration failure
             throw new Error('Failed to register');
