@@ -2,9 +2,9 @@ document.getElementById('receiptForm').addEventListener('submit', function(event
     event.preventDefault(); // Prevent the default form submission
 
     const receiptData = {
-        purchaseDate: document.getElementById('purchase').value,
-        totalAmount: document.getElementById('total').value,
-        storeName: document.getElementById('store').value,
+        PurchaseDate: document.getElementById('purchase').value,
+        TotalAmount: document.getElementById('total').value,
+        StoreName: document.getElementById('store').value,
         items: []
     };
 
@@ -14,9 +14,9 @@ document.getElementById('receiptForm').addEventListener('submit', function(event
         const details = item.textContent.split(", $");
         const priceDesc = details[1].split(", ");
         receiptData.items.push({
-            name: details[0],
-            price: priceDesc[0],
-            description: priceDesc[1].slice(0, -1)
+            Name: details[0],
+            Amount: priceDesc[0],
+            Description: priceDesc[1].slice(0, -1)
         });
     });
 

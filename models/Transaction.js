@@ -14,12 +14,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-
-        TransactionDate: {
-            type: DataTypes.DATE,
-            unique: false,
-            allowNull: false,
-        },
     });
 
     return Transaction;
