@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="refactor api.js">
+    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="fix model names">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Transaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Transaction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/receiptUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/receiptUpload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/registerUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/registerUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +98,7 @@
       <workItem from="1713283131602" duration="16000" />
       <workItem from="1713283162196" duration="1478000" />
       <workItem from="1713989889021" duration="2009000" />
-      <workItem from="1714249245247" duration="3345000" />
+      <workItem from="1714249245247" duration="4372000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -276,7 +276,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714252284272</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fix model names">
+      <option name="closed" value="true" />
+      <created>1714252612616</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1714252612616</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fix model names">
+      <option name="closed" value="true" />
+      <created>1714252678882</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1714252678882</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,6 +324,7 @@
     <MESSAGE value="serverside error handling" />
     <MESSAGE value="properly export routers" />
     <MESSAGE value="refactor api.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor api.js" />
+    <MESSAGE value="fix model names" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix model names" />
   </component>
 </project>
