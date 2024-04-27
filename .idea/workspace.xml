@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="update README.md">
-      <change afterPath="$PROJECT_DIR$/public/javascripts/receiptUpload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Transaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Transaction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/receipt.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/receipt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/receipt.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/receipt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
+    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="upload receipt to database">
+      <change beforePath="$PROJECT_DIR$/public/javascripts/receiptUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/receiptUpload.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +96,7 @@
       <workItem from="1713283131602" duration="16000" />
       <workItem from="1713283162196" duration="1478000" />
       <workItem from="1713989889021" duration="2009000" />
-      <workItem from="1714249245247" duration="2286000" />
+      <workItem from="1714249245247" duration="2446000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -239,11 +234,30 @@
       <option name="project" value="LOCAL" />
       <updated>1712002819774</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="upload receipt to database">
+      <option name="closed" value="true" />
+      <created>1714251618937</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1714251618937</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
@@ -255,6 +269,7 @@
     <MESSAGE value="Remove node_modules from git tracking" />
     <MESSAGE value="fix .gitignore" />
     <MESSAGE value="update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
+    <MESSAGE value="upload receipt to database" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload receipt to database" />
   </component>
 </project>

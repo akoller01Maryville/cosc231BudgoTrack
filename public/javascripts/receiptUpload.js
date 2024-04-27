@@ -28,7 +28,19 @@ document.getElementById('receiptForm').addEventListener('submit', function(event
         },
         body: JSON.stringify(receiptData)
     })
-        .then(response => response.json())
-        .then(data => console.log('Success:', data))
+        .then(response => {
+            console.log(response); // Check the response object
+            return response.text();  // Convert to text first to avoid JSON parsing issues
+        })
+        .then(text => {
+            try {
+                const data = JSON.parse(text); // Manually parse the text to JSON
+                console.log('Success:', data);
+            } catch (error) {
+                console.error('Failed to parse JSON:', error);
+                console.error('Received text:', text);
+            }
+        })
         .catch((error) => console.error('Error:', error));
+
 });
