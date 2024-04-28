@@ -35,4 +35,22 @@ router.post('/receipts', async (req, res) => {
     }
 });
 
+// Endpoint to get recent receipts
+router.get('/api/recent-receipts', async (req, res) => {
+    const userId = req.session.userId;
+    try {
+        const recentReceipts = await Receipt.findAll({
+            where: {
+                userId: userId // Filter receipts by userId
+            },
+            order: [['PurchaseDate', 'DESC']],
+            limit: 3 // this can be changed or we can use a switch to reuse this endpoint on the statements page
+        });
+        res.json(recentReceipts);
+    } catch (error) {
+        console.error('Error fetching recent receipts:', error);
+        res.status(500).json({ error: 'Failed to fetch data' });
+    }
+});
+
 module.exports = router;
