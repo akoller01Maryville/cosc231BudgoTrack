@@ -64,7 +64,7 @@ sequelize.authenticate()
 
 
 // sync database
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: true }).then(() => { //{ force: true }
     console.log("Database & tables created!");
 });
 
