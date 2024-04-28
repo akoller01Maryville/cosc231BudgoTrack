@@ -10,20 +10,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Create and append store name
                 const storeName = document.createElement('div');
-                storeName.textContent = receipt.StoreName;
+                storeName.textContent = `Store: ${receipt.StoreName}`;
                 storeName.className = 'recentStoreName';
                 receiptContainer.appendChild(storeName);
 
                 // Create and append total amount
                 const totalAmount = document.createElement('div');
-                totalAmount.textContent = `$${receipt.TotalAmount}`;
+                totalAmount.textContent = `Total: $${receipt.TotalAmount}`;
                 totalAmount.className = 'recentTotalAmount';
                 receiptContainer.appendChild(totalAmount);
 
                 // Create and append purchase date
                 const purchaseDate = document.createElement('div');
                 purchaseDate.textContent = new Date(receipt.PurchaseDate).toLocaleDateString();
-                purchaseDate.className = 'recentPurchaseDate';
+                purchaseDate.className = `Date of purchase: ${receipt.PurchaseDate}`;
                 receiptContainer.appendChild(purchaseDate);
 
                 // Append the receipt container to the grid container
