@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="adjust post">
+    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="add redirect script to each html page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/chart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/receipt.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/receipt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/statements.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/statements.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714254232240</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add redirect script to each html page">
+      <option name="closed" value="true" />
+      <created>1714255009213</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1714255009213</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,6 +349,7 @@
     <MESSAGE value="fix model names" />
     <MESSAGE value="reroute to chart on register" />
     <MESSAGE value="adjust post" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjust post" />
+    <MESSAGE value="add redirect script to each html page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add redirect script to each html page" />
   </component>
 </project>
