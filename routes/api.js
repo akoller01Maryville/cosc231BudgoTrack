@@ -36,7 +36,7 @@ router.post('/receipts', async (req, res) => {
 });
 
 // Endpoint to get recent receipts
-router.get('/api/recent-receipts', async (req, res) => {
+router.get('/recent-receipts', async (req, res) => {
     const userId = req.session.userId;
     try {
         const recentReceipts = await Receipt.findAll({
