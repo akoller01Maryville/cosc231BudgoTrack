@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="adjust post">
+    <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="add redirect script to each html page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,27 +49,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Node.js.bin\\www.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature-redirect-login&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.11.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.11.30&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/avkol/IdeaProjects/cosc231BudgoTrack/public/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Node.js.bin\\www.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature-redirect",
+    "javascript.nodejs.core.library.configured.version": "20.11.0",
+    "javascript.nodejs.core.library.typings.version": "20.11.30",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/avkol/IdeaProjects/cosc231BudgoTrack/public/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\avkol\IdeaProjects\cosc231BudgoTrack\public\images" />
@@ -307,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714254232240</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add redirect script to each html page">
+      <option name="closed" value="true" />
+      <created>1714255009213</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1714255009213</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,6 +349,7 @@
     <MESSAGE value="fix model names" />
     <MESSAGE value="reroute to chart on register" />
     <MESSAGE value="adjust post" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjust post" />
+    <MESSAGE value="add redirect script to each html page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add redirect script to each html page" />
   </component>
 </project>
