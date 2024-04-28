@@ -1,6 +1,7 @@
 /*  TO-DO LIST (in priority order, high to low):
 
     TODO: style index.html based on wireframes
+        - style forms
         - style registration popup
 
     TODO: style chart.html
@@ -144,6 +145,60 @@ footer {
   }
 
 /***** ID's *****/
+/*** index.html ***/
+#loginSection { 
+    
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+} #loginForm label {
+    font-size: 1.5rem;
+    width: 50%;
+} #loginForm input {
+    width: 50%;
+    padding: 0.3rem;
+    font-size: 1rem;
+} #loginForm button {
+    width: 15%;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    background-color: #4FB051;
+    color: #E6F7FF;
+    border: none;
+    overflow: auto;
+} #loginForm button:hover {
+    background-color: #3A8E3A;
+    cursor: pointer;
+}
+
+#registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+} #registerForm label {
+    font-size: 1.5rem;
+} #registerForm input {
+    width: 50%;
+    padding: 0.3rem;
+    font-size: 1rem;
+} #registerForm button {
+    width: 20%;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    background-color: #4FB051;
+    color: #E6F7FF;
+    border: none;
+} #registerForm button:hover {
+    background-color: #3A8E3A;
+    cursor: pointer;
+}
 /*** chart.html ***/
 #userHeading img {
     max-width: 70%;
