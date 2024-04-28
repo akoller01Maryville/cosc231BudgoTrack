@@ -38,7 +38,9 @@ async function createTestData(username, email, password) {
 async function run() {
     // Set to true to force reinitialization, false to just sync
     await initializeDatabase(true);
-    await createTestData("admin2", "admin@gmail.com", "password2");
+    await createTestData("admin", "admin@gmail.com", "password");
+    await createTestData("admin2", "admin2@gmail.com", "password2");
+    await createTestData("admin3", "admin3@gmail.com", "password3");
 }
 
 run();
