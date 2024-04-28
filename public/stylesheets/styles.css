@@ -83,7 +83,7 @@ footer {
 .gridContainerActivity {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     row-gap: 1rem;
 }
 
@@ -114,6 +114,7 @@ footer {
 .hidden {
     visibility: hidden;
 }
+
 /*** classes for recent activity ***/
 .recentReceipt {
     display: flex;
@@ -121,10 +122,12 @@ footer {
     padding: 15px;
     border: 1px;
     border-radius: 5px; /* rounded corners */
+    text-align: center;
 }
 
 .recentStoreName, .recentTotalAmount, .recentPurchaseDate {
     margin-bottom: 10px; /* each detail padding */
+    text-align: center;
 }
 
 /***** ID's *****/
@@ -174,18 +177,6 @@ footer {
     grid-area: 1 / 5 / 2 / 6; 
 
     margin: 1% 30%;
-} #recent1 { 
-    grid-area: 2 / 1 / 3 / 2;
-
-    text-align: right;
-} #recent2 { 
-    grid-area: 2 / 3 / 3 / 4;
-
-    text-align: center;
-} #recent3 { 
-    grid-area: 2 / 5 / 3 / 6;
-
-    text-align: left;
 }
 
 #receiptsList {
@@ -194,6 +185,7 @@ footer {
     grid-gap: 20px; /* between each grid */
     padding: 20px;
 }
+
 #newReceiptButton {
     background: #1c1c1c;
     background-image: -webkit-linear-gradient(top, #1c1c1c, #525252);
