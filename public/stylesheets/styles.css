@@ -114,6 +114,15 @@ footer {
 .hidden {
     visibility: hidden;
 }
+/*** classes for recent activity ***/
+.recentItem {
+    display: flex;
+}
+.recent1, .recent2, .recent3 {
+    flex: 1;
+    padding: 5px;
+    text-align: left;
+}
 
 /***** ID's *****/
 /*** chart.html ***/

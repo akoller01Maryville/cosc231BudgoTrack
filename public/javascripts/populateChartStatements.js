@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const listElement = document.getElementById('receiptsList');
             receipts.forEach((receipt, index) => {
                 const listItem = document.createElement('li');
-                listItem.className = `recentItem`; // Apply a general class for all items
+                listItem.className = `recentItem`; // General class for all items
 
                 // Create elements for each piece of data
                 const storeName = document.createElement('div');
