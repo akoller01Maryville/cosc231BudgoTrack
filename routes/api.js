@@ -53,4 +53,33 @@ router.get('/recent-receipts', async (req, res) => {
     }
 });
 
+router.get('/receipts-with-items', async (req, res) => {
+    const userId = req.session.userId;
+    console.log("Fetching items for user:", userId); // Log to verify user ID
+    try {
+        if (!userId) {
+            return res.status(401).json({ message: "User not authenticated" });
+        }
+
+        const receipts = await Receipt.findAll({
+            where: {
+                userId: userId
+            },
+            include: [{
+                model: Transaction,
+                as: 'Transactions'
+            }],
+            order: [
+                ['PurchaseDate', 'DESC'],
+                [Transaction, 'createdAt', 'ASC']
+            ]
+        });
+        res.json(receipts);
+    } catch (error) {
+        console.error('Error fetching receipts with items:', error);
+        res.status(500).json({ error: 'Failed to fetch data' });
+    }
+});
+
+
 module.exports = router;
