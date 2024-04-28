@@ -42,8 +42,8 @@ User.hasOne(UserProfile);
 UserProfile.belongsTo(User);
 
 // Receipts relationships
-Receipt.hasMany(Transaction, {foreignKey: 'ReceiptId'});
-Transaction.belongsTo(Receipt, {foreignKey: 'ReceiptId'});
+Receipt.hasMany(Transaction, { as: 'Transactions', foreignKey: 'ReceiptId' });
+Transaction.belongsTo(Receipt, { foreignKey: 'ReceiptId' });
 
 Category.hasMany(Transaction);
 Transaction.belongsTo(Category);
