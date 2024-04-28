@@ -62,18 +62,15 @@ router.get('/receipts-with-items', async (req, res) => {
         }
 
         const receipts = await Receipt.findAll({
-            where: {
-                userId: userId
-            },
-            include: [{
-                model: Transaction,
-                as: 'Transactions'
-            }],
+            where: { userId: userId },
+            include: [Transaction],
             order: [
                 ['PurchaseDate', 'DESC'],
                 [Transaction, 'createdAt', 'ASC']
             ]
         });
+
+        console.log("Receipts fetched: ", receipts);
         res.json(receipts);
     } catch (error) {
         console.error('Error fetching receipts with items:', error);
