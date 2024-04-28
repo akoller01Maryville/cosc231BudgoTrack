@@ -115,13 +115,16 @@ footer {
     visibility: hidden;
 }
 /*** classes for recent activity ***/
-.recentItem {
+.recentReceipt {
     display: flex;
+    flex-direction: column; /* stack vertically */
+    padding: 15px;
+    border: 1px;
+    border-radius: 5px; /* rounded corners */
 }
-.recent1, .recent2, .recent3 {
-    flex: 1;
-    padding: 5px;
-    text-align: left;
+
+.recentStoreName, .recentTotalAmount, .recentPurchaseDate {
+    margin-bottom: 10px; /* each detail padding */
 }
 
 /***** ID's *****/
@@ -185,6 +188,12 @@ footer {
     text-align: left;
 }
 
+#receiptsList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px; /* between each grid */
+    padding: 20px;
+}
 #newReceiptButton {
     background: #1c1c1c;
     background-image: -webkit-linear-gradient(top, #1c1c1c, #525252);

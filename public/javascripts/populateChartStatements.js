@@ -2,31 +2,32 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('/api/recent-receipts')
         .then(response => response.json())
         .then(receipts => {
-            const listElement = document.getElementById('receiptsList');
-            receipts.forEach((receipt, index) => {
-                const listItem = document.createElement('li');
-                listItem.className = `recentItem`; // General class for all items
+            const gridContainer = document.getElementById('receiptsList');
+            receipts.forEach(receipt => {
+                // Create a container for each receipt
+                const receiptContainer = document.createElement('div');
+                receiptContainer.className = 'receipt';
 
-                // Create elements for each piece of data
+                // Create and append store name
                 const storeName = document.createElement('div');
                 storeName.textContent = receipt.StoreName;
-                storeName.className = 'recent1'; // Style for the store name
+                storeName.className = 'recentStoreName';
+                receiptContainer.appendChild(storeName);
 
+                // Create and append total amount
                 const totalAmount = document.createElement('div');
                 totalAmount.textContent = `$${receipt.TotalAmount}`;
-                totalAmount.className = 'recent2'; // Style for the amount
+                totalAmount.className = 'recentTotalAmount';
+                receiptContainer.appendChild(totalAmount);
 
+                // Create and append purchase date
                 const purchaseDate = document.createElement('div');
                 purchaseDate.textContent = new Date(receipt.PurchaseDate).toLocaleDateString();
-                purchaseDate.className = 'recent3'; // Style for the date
+                purchaseDate.className = 'recentPurchaseDate';
+                receiptContainer.appendChild(purchaseDate);
 
-                // Append all to the list item
-                listItem.appendChild(storeName);
-                listItem.appendChild(totalAmount);
-                listItem.appendChild(purchaseDate);
-
-                // Append the list item to the list
-                listElement.appendChild(listItem);
+                // Append the receipt container to the grid container
+                gridContainer.appendChild(receiptContainer);
             });
         })
         .catch(error => console.error('Error fetching receipts:', error));
