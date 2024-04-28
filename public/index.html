@@ -29,9 +29,11 @@
         </form>
     </div>
 
-    <div id="registrationSection">
-        <h2>Register</h2>
-        <form id="registerForm">
+    <button onclick="document.getElementById('registrationSection').style.display='block'">Sign Up</button> <!-- button to open register section-->
+
+    <div id="registrationSection" class="modal">
+        <form id="registerForm" class="modal-content">
+            <h2>Register</h2>
             <label for="registrationUsername">Username:</label>
             <input type="text" id="registrationUsername" name="username" required>
             <label for="registrationEmail">Email:</label>
@@ -42,7 +44,15 @@
         </form>
     </div>
 
-
+    <script> //closes registration when click on dark area background
+        var modal = document.getElementById('registrationSection');
+        
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+    </script>
     <script src="javascripts/displayUserDetails.js"></script>
     <script src="javascripts/loggedInStatus.js"></script>
     <script src="javascripts/loginForm.js"></script>

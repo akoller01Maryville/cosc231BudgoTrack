@@ -1,17 +1,10 @@
 /*  TO-DO LIST (in priority order, high to low):
 
     TODO: style index.html based on wireframes
-
-    TODO: find font to use throughout the pages [approve with everyone?]
+        - style registration popup
 
     TODO: style chart.html
-        - find out how to fill in info in chart.html grid section AK
-        - style buttons
-        - style text (bold, larger, etc...)
         - style .verticalLine more cleanly
-        - make logout button log user out AK
-        - populate placeholder name with username AK
-        - populate recent activity with 3 most recent receipts AK
 
     TODO: style receipt.html based on wireframes
         - style text (bold, larger, etc...)
@@ -126,6 +119,29 @@ footer {
 .hidden {
     visibility: hidden;
 }
+
+/*** index.html ***/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(39, 66, 39, 0.6);
+    padding-top: 50px;
+  }
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 60%;
+  }
 
 /***** ID's *****/
 /*** chart.html ***/
