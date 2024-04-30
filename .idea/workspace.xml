@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="add redirect script to each html page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +57,7 @@
     "Node.js.bin\\www.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature-redirect",
+    "git-widget-placeholder": "feature-populate-statements",
     "javascript.nodejs.core.library.configured.version": "20.11.0",
     "javascript.nodejs.core.library.typings.version": "20.11.30",
     "kotlin-language-version-configured": "true",
@@ -67,6 +68,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\avkol\\AppData\\Local\\Programs\\IntelliJ IDEA Ultimate\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
