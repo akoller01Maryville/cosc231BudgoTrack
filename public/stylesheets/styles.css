@@ -1,14 +1,8 @@
 /*  TO-DO LIST (in priority order, high to low):
-
-    TODO: style index.html based on wireframes
-        - style forms
-        - style registration popup
-
     TODO: style chart.html
-        - style .verticalLine more cleanly
+        - background color behind charts (for visibility)
 
     TODO: style receipt.html based on wireframes
-        - style text (bold, larger, etc...)
         - clean up overall, if time
 */
 
@@ -87,6 +81,7 @@ footer {
 /***** Classes *****/
 .flexContainer {
     display: flex;
+    background-color: #4FB051;
 }
 
 .gridContainerActivity {
@@ -106,6 +101,7 @@ footer {
 
 .verticalLine {
     width: 1px; /* Line width */
+    max-height: 1%;
     background-color: black; /* Line color */
     display: inline;
 }
@@ -222,6 +218,10 @@ footer {
 }
 
 /*** chart.html ***/
+#chartTitle {
+    margin-bottom: 30px;
+}
+
 #userHeading img {
     max-width: 70%;
     padding-bottom: 0.5rem;
