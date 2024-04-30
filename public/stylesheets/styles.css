@@ -1,21 +1,5 @@
 /*  TO-DO LIST (in priority order, high to low):
-
-    TODO: style index.html based on wireframes
-
-    TODO: find font to use throughout the pages [approve with everyone?]
-
-    TODO: style chart.html
-        - find out how to fill in info in chart.html grid section AK
-        - style buttons
-        - style text (bold, larger, etc...)
-        - style .verticalLine more cleanly
-        - make logout button log user out AK
-        - populate placeholder name with username AK
-        - populate recent activity with 3 most recent receipts AK
-
-    TODO: style receipt.html based on wireframes
-        - style text (bold, larger, etc...)
-        - clean up overall, if time
+    - add feature to clear inputs after submitting new receipt
 */
 
 * {         /* applies to every element */
@@ -23,10 +7,24 @@
 }
 
 body {
-    font-family: Helvetica, sans-serif;
     line-height: 1.6;
     color: #333333;
     background-color: #fffaf0;
+    font-family: Tahoma, sans-serif;
+}
+
+button {
+    font-family: 'Roboto Slab', serif;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #a7a7a7;
+    padding: 0.5rem 1rem;
+}
+
+h2 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: 1.7em;
 }
 
 header {    /* NOTE: all pages have: button -> title -> empty div inside header. these must exist in order to display correctly */
@@ -40,14 +38,18 @@ header {    /* NOTE: all pages have: button -> title -> empty div inside header.
 
 header button {             /* header back button: LEFT */
     flex: 0.15;
+    padding: 0.5rem;
+    font-size: 1em;
 }
 
 header h1 {                 /* title: CENTER */
-    font-size: 1.5rem;
+    font-size: 2rem;
     
     flex-basis: 50%;
     margin-bottom: 0.5rem;
     text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
 }
 
 header div {                /* empty space: RIGHT */
@@ -64,8 +66,11 @@ main section {
 }
 
 canvas {
-    max-width: 20%;
+    max-width: 30%;
     max-height: 100%;
+    background-color: white;
+    border-radius: 10%;
+    padding: 10px;
 }
 
 footer {
@@ -78,6 +83,11 @@ footer {
 /***** Classes *****/
 .flexContainer {
     display: flex;
+}
+
+.flexContainerGreen {
+    display: flex;
+    background-color: #4FB051;
 }
 
 .gridContainerActivity {
@@ -97,12 +107,9 @@ footer {
 
 .verticalLine {
     width: 1px; /* Line width */
+    max-height: 1%;
     background-color: black; /* Line color */
     display: inline;
-}
-
-.currencyInput {
-    visibility: visible;
 }
 
 .center {
@@ -114,6 +121,7 @@ footer {
 .hidden {
     visibility: hidden;
 }
+
 
 /*** classes for recent activity ***/
 .recentReceipt {
@@ -130,8 +138,111 @@ footer {
     text-align: center;
 }
 
+/*** index.html ***/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(39, 66, 39, 0.6);
+    padding-top: 50px;
+  } 
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 0% auto; /* 5% from the top, 15% from the bottom and centered */
+    width: 50%;
+    border-radius: 20px;
+  }
+
+
 /***** ID's *****/
+/*** index.html ***/
+#launchIMG {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ 
+    max-width: 40%;
+    padding: 1rem;
+    padding-bottom: 0;
+    border-radius: 8%;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+} #loginForm label {
+    font-size: 1.1rem;
+    width: 30%;
+    padding-top: 0.5rem;
+} #loginForm input {
+    width: 30%;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+} #loginForm button {
+    width: 9%;
+    padding: 0.5rem;
+    font-size: 1.4rem;
+    background-color: #4FB051;
+    color: #E6F7FF;
+    border: none;
+    overflow: auto;
+    margin-top: 0.5rem;
+} #loginForm button:hover {
+    background-color: #3A8E3A;
+    cursor: pointer;
+} #loginForm #signUpButton {
+    margin-top: 0.2rem;
+    width: 8%;
+    font-size: 1rem;
+    background-color: unset;
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+} #loginForm #signUpButton:hover {
+    color: #4f81b0;
+}
+
+#registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+} #registerForm label {
+    font-size: 1.1rem;
+    width: 40%;
+    padding-top: 0.5rem;
+} #registerForm input {
+    width: 40%;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+} #registerForm button {
+    width: 20%;
+    padding: 0.5rem;
+    font-size: 1.4rem;
+    background-color: #4FB051;
+    color: #E6F7FF;
+    border: none;
+    overflow: auto;
+    margin-top: 0.5rem;
+} #registerForm button:hover {
+    background-color: #3A8E3A;
+    cursor: pointer;
+}
+
 /*** chart.html ***/
+#chartTitle {
+    margin-bottom: 30px;
+    font-size: 1.7rem;
+    font-weight: 750;
+}
+
 #userHeading img {
     max-width: 70%;
     padding-bottom: 0.5rem;
@@ -142,7 +253,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1.5rem;
 
     background-color: #4FB051;
     font-size: 1.5rem;
@@ -163,6 +274,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 3%;
 }
 
 /* for chart.html recent activity, all begin with recent */
@@ -173,8 +285,10 @@ footer {
     font-weight: bolder;
     text-decoration: underline;
     font-size: 1.5rem;
+    margin-top: 5%;
  } #recentButton { 
     grid-area: 1 / 5 / 2 / 6; 
+
 
     margin: 1% 30%;
 }
@@ -184,6 +298,8 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px; /* between each grid */
     padding: 20px;
+    margin: 3% 30%;
+
 }
 
 #newReceiptButton {
@@ -213,15 +329,19 @@ footer {
 }
 
 /*** receipt.html ***/
+#receiptForm {
+    margin-left: 5%;
+    margin-right: 0%
+}
 #receiptItemForm {
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: left;
-    gap: 5px;
+    gap: 2px;
 
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
 } #receiptItemForm #itemname { /* first input */
     width: 50%;
     padding: 0.3rem;
@@ -234,7 +354,7 @@ footer {
     margin-bottom: 3%;
 } #receiptItemForm #itemdesc { /* third input */
     width: 100%;
-    height: 10rem;
+    height: 8rem;
     font-size: 1rem;
 } #receiptItemForm button {
     width: 20%;
@@ -257,7 +377,7 @@ footer {
 
     overflow-y: scroll; /* enables vertical scroll */
     overflow-wrap: normal;
-    max-height: 550px; /* height of list */
+    max-height: 350px; /* height of list */
     margin-top: 2%;
 } 
 #itemUL li {
@@ -330,10 +450,33 @@ footer {
     grid-area: 2 / 2 / 3 / 3;
     text-align: center;
     padding-top: 8%;
-    padding-right: 30%;
+    padding-right: 15%;
 }
 
 /* Hide the content that should only be visible when the user is logged in
 #loggedInContent {
     display: none;
 } */
+
+/******** FONTS ********/
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/robotoslab/v34/BngMUXZYTXPIvIBgJJSb6ufN5qWr4xCC.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+.roboto-slab-regular {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.roboto-slab-bold {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }

@@ -3,7 +3,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>BudgoTrack</title>
+    <title>BudgoTrack: Log In</title>
     <link rel="stylesheet" href="stylesheets/reset.css">
     <!-- reset above, style below -->
     <link rel="stylesheet" href="stylesheets/styles.css">
@@ -18,20 +18,24 @@
 
     <div id="userDetails"></div>
 
+    <img id="launchIMG" src="images/budgetLAUNCH.jpg">
+
     <div id="loginSection">
-        <h2>Login</h2>
         <form id="loginForm">
+            <h2>Welcome!</h2>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
+            <button type="submit">Log In</button>
+
+            <button id="signUpButton" onclick="document.getElementById('registrationSection').style.display='block'">Sign Up</button> <!-- button to open register section-->
         </form>
     </div>
 
-    <div id="registrationSection">
-        <h2>Register</h2>
-        <form id="registerForm">
+    <div id="registrationSection" class="modal">
+        <form id="registerForm" class="modal-content">
+            <h2>Register</h2>
             <label for="registrationUsername">Username:</label>
             <input type="text" id="registrationUsername" name="username" required>
             <label for="registrationEmail">Email:</label>
@@ -42,7 +46,15 @@
         </form>
     </div>
 
-
+    <script> //closes registration when click on dark area background
+        var modal = document.getElementById('registrationSection');
+        
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+    </script>
     <script src="javascripts/displayUserDetails.js"></script>
     <script src="javascripts/loggedInStatus.js"></script>
     <script src="javascripts/loginForm.js"></script>
