@@ -31,6 +31,8 @@
             alert("You must fill out all of the fields!");
         } else {
             document.getElementById("itemUL").appendChild(li);
+            document.getElementById("itemdesc").value = "";
+            document.getElementById("itemprice").value = "0.00";
         }
         document.getElementById("itemname").value = "";
         var span = document.createElement("SPAN");

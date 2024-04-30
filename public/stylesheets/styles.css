@@ -1,9 +1,5 @@
 /*  TO-DO LIST (in priority order, high to low):
-    TODO: style chart.html
-        - background color behind charts (for visibility)
-
-    TODO: style receipt.html based on wireframes
-        - clean up overall, if time
+    - add feature to clear inputs after submitting new receipt
 */
 
 * {         /* applies to every element */
@@ -22,6 +18,7 @@ button {
     border-radius: 5px;
     border-width: 1px;
     border-color: #a7a7a7;
+    padding: 0.5rem 1rem;
 }
 
 h2 {
@@ -41,6 +38,8 @@ header {    /* NOTE: all pages have: button -> title -> empty div inside header.
 
 header button {             /* header back button: LEFT */
     flex: 0.15;
+    padding: 0.5rem;
+    font-size: 1em;
 }
 
 header h1 {                 /* title: CENTER */
@@ -67,8 +66,11 @@ main section {
 }
 
 canvas {
-    max-width: 20%;
+    max-width: 30%;
     max-height: 100%;
+    background-color: white;
+    border-radius: 10%;
+    padding: 10px;
 }
 
 footer {
@@ -81,13 +83,17 @@ footer {
 /***** Classes *****/
 .flexContainer {
     display: flex;
+}
+
+.flexContainerGreen {
+    display: flex;
     background-color: #4FB051;
 }
 
 .gridContainerActivity {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     row-gap: 1rem;
 }
 
@@ -104,10 +110,6 @@ footer {
     max-height: 1%;
     background-color: black; /* Line color */
     display: inline;
-}
-
-.currencyInput {
-    visibility: visible;
 }
 
 .center {
@@ -220,6 +222,8 @@ footer {
 /*** chart.html ***/
 #chartTitle {
     margin-bottom: 30px;
+    font-size: 1.7rem;
+    font-weight: 750;
 }
 
 #userHeading img {
@@ -232,7 +236,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1.5rem;
 
     background-color: #4FB051;
     font-size: 1.5rem;
@@ -253,6 +257,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 3%;
 }
 
 /* for chart.html recent activity, all begin with recent */
@@ -263,22 +268,11 @@ footer {
     font-weight: bolder;
     text-decoration: underline;
     font-size: 1.5rem;
+    margin-top: 5%;
  } #recentButton { 
     grid-area: 1 / 5 / 2 / 6; 
 
-    margin: 1% 30%;
-} #recent1 { 
-    grid-area: 2 / 1 / 3 / 2;
-
-    text-align: right;
-} #recent2 { 
-    grid-area: 2 / 3 / 3 / 4;
-
-    text-align: center;
-} #recent3 { 
-    grid-area: 2 / 5 / 3 / 6;
-
-    text-align: left;
+    margin: 3% 30%;
 }
 
 #newReceiptButton {
@@ -308,15 +302,19 @@ footer {
 }
 
 /*** receipt.html ***/
+#receiptForm {
+    margin-left: 5%;
+    margin-right: 0%
+}
 #receiptItemForm {
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: left;
-    gap: 5px;
+    gap: 2px;
 
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
 } #receiptItemForm #itemname { /* first input */
     width: 50%;
     padding: 0.3rem;
@@ -329,7 +327,7 @@ footer {
     margin-bottom: 3%;
 } #receiptItemForm #itemdesc { /* third input */
     width: 100%;
-    height: 10rem;
+    height: 8rem;
     font-size: 1rem;
 } #receiptItemForm button {
     width: 20%;
@@ -352,7 +350,7 @@ footer {
 
     overflow-y: scroll; /* enables vertical scroll */
     overflow-wrap: normal;
-    max-height: 550px; /* height of list */
+    max-height: 350px; /* height of list */
     margin-top: 2%;
 } 
 #itemUL li {
@@ -425,7 +423,7 @@ footer {
     grid-area: 2 / 2 / 3 / 3;
     text-align: center;
     padding-top: 8%;
-    padding-right: 30%;
+    padding-right: 15%;
 }
 
 /* Hide the content that should only be visible when the user is logged in
