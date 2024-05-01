@@ -45,11 +45,23 @@ document.addEventListener('DOMContentLoaded', function() {
                                 top: 10,
                                 bottom: 10,
                             }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    return 'Amount: $' + tooltipItem.raw.toFixed(2);
+                                }
+                            }
                         }
                     },
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toFixed(2);
+                                }
+                            }
                         }
                     }
                 }
@@ -82,9 +94,21 @@ document.addEventListener('DOMContentLoaded', function() {
                                 top: 10,
                                 bottom: 10,
                             }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    // Ensure proper access to the tooltip item's context
+                                    let label = tooltipItem.chart.data.labels[tooltipItem.dataIndex];
+                                    let value = tooltipItem.dataset.data[tooltipItem.dataIndex];
+                                    return `${label}: $${parseFloat(value).toFixed(2)}`; // Ensure proper formatting
+                                }
+                            }
                         }
                     }
-            }});
+                }
+            });
+
         })
         .catch(error => console.error('Error fetching store data:', error));
 });
