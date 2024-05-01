@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'Spending By Month',
+                        label: 'Amount',
                         data: datapoints.reverse(),
                         backgroundColor: 'rgba(54, 162, 235, 1)',
                         borderColor: 'rgba(54, 162, 235, 1)',
@@ -37,6 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     }]
                 },
                 options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Monthly Spending',
+                            padding: {
+                                top: 10,
+                                bottom: 10,
+                            }
+                        }
+                    },
                     scales: {
                         y: {
                             beginAtZero: true
@@ -54,17 +64,27 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             const ctx2 = document.getElementById('chart2').getContext('2d');
             const myChart2 = new Chart(ctx2, {
-                type: 'pie',
+                type: 'doughnut',
                 data: {
                     labels: data.map(item => item.StoreName),
                     datasets: [{
-
                         data: data.map(item => item.total_spent),
-                        backgroundColor: data.map(() => `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.5)`),
+                        backgroundColor: data.map(() => `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 1)`),
                         hoverOffset: 4
                     }]
                 },
-            });
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Spending Per Store',
+                            padding: {
+                                top: 10,
+                                bottom: 10,
+                            }
+                        }
+                    }
+            }});
         })
         .catch(error => console.error('Error fetching store data:', error));
 });
