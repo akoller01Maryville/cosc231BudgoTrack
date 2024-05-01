@@ -17,8 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 return acc;
             }, {});
 
-            const labels = Object.keys(monthlyTotals);
-            const datapoints = Object.values(monthlyTotals);
+            let labels = Object.keys(monthlyTotals);
+            let datapoints = Object.values(monthlyTotals);
+
+            labels = labels.reverse();
+            datapoints = datapoints.reverse();
 
             const ctx1 = document.getElementById('chart1').getContext('2d');
             const myChart1 = new Chart(ctx1, {
@@ -26,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'Monthly Spending',
-                        data: datapoints,
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        label: 'Spending By Month',
+                        data: datapoints.reverse(),
+                        backgroundColor: 'rgba(54, 162, 235, 1)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 1
                     }]
@@ -55,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 data: {
                     labels: data.map(item => item.StoreName),
                     datasets: [{
-                        label: 'Spending by Store',
+
                         data: data.map(item => item.total_spent),
                         backgroundColor: data.map(() => `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.5)`),
                         hoverOffset: 4
