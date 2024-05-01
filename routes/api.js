@@ -81,29 +81,17 @@ router.get('/receipts-with-items', async (req, res) => {
 // API route to get monthly expenditure
 router.get('/expenditure-by-month', async (req, res) => {
     const userId = req.session.userId;
-    if (!userId) {
-        return res.status(401).json({ message: "User not authenticated" });
-    }
-
     try {
-        const monthlyExpenditure = await Receipt.findAll({
-            where: { userId },
-            attributes: [
-                [sequelize.fn('date_trunc', 'month', sequelize.col('PurchaseDate')), 'month'],
-                [sequelize.fn('sum', sequelize.col('TotalAmount')), 'total_spent']
-            ],
-            group: [sequelize.fn('date_trunc', 'month', sequelize.col('PurchaseDate'))],
-            order: [[sequelize.fn('date_trunc', 'month', sequelize.col('PurchaseDate')), 'ASC']]
+        const allUserReceipts = await Receipt.findAll({
+            where: {
+                userId: userId // Filter receipts by userId
+            },
+            order: [['PurchaseDate', 'DESC']],
         });
-        res.json(monthlyExpenditure.map(item => {
-            return {
-                month: item.dataValues.month,
-                total_spent: parseFloat(item.dataValues.total_spent)
-            };
-        }));
+        res.json(allUserReceipts);
     } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ error: 'Failed to fetch monthly expenditure' });
+        console.error('Error fetching recent receipts:', error);
+        res.status(500).json({ error: 'Failed to fetch data' });
     }
 });
 

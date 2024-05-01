@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="24a2955e-9791-40ce-8a4a-d0b8b66d932f" name="Changes" comment="add redirect script to each html page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/chart-setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/chart-setup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/chart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +102,7 @@
       <workItem from="1713989889021" duration="2009000" />
       <workItem from="1714249245247" duration="5102000" />
       <workItem from="1714517376167" duration="311000" />
-      <workItem from="1714587186652" duration="2479000" />
+      <workItem from="1714587186652" duration="2905000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
