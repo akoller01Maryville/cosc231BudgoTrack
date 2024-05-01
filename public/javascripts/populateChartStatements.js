@@ -22,8 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Create and append purchase date
                 const purchaseDate = document.createElement('div');
-                purchaseDate.textContent = new Date(receipt.PurchaseDate).toLocaleDateString();
-                purchaseDate.className = `Date of purchase: ${receipt.PurchaseDate}`;
+                let localDate = new Date(receipt.PurchaseDate);
+                localDate = localDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                });
+                purchaseDate.textContent = `Date of purchase: ${localDate}`;
+                purchaseDate.className = `recentPurchaseDate`;
                 receiptContainer.appendChild(purchaseDate);
 
                 // Append the receipt container to the grid container
