@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     datasets: [{
                         label: 'Amount',
                         data: datapoints.reverse(),
-                        backgroundColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(79, 176, 81, 1)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 1
                     }]
