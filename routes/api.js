@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Receipt, Transaction } = require('../models');
+const { Receipt, Transaction, sequelize} = require('../models');
 
 // POST /api/receipts
 router.post('/receipts', async (req, res) => {
@@ -75,6 +75,54 @@ router.get('/receipts-with-items', async (req, res) => {
     } catch (error) {
         console.error('Error fetching receipts with items:', error);
         res.status(500).json({ error: 'Failed to fetch data' });
+    }
+});
+
+// API route to get monthly expenditure
+router.get('/expenditure-by-month', async (req, res) => {
+    const userId = req.session.userId;
+    if (!userId) {
+        return res.status(401).json({ message: "User not authenticated" });
+    }
+
+    try {
+        const monthlyExpenditure = await Receipt.findAll({
+            where: { userId },
+            attributes: [
+                [sequelize.fn('date_trunc', 'month', sequelize.col('PurchaseDate')), 'month'],
+                [sequelize.fn('sum', sequelize.col('TotalAmount')), 'total_spent']
+            ],
+            group: 'month',
+            order: [['month', 'ASC']],
+        });
+        res.json(monthlyExpenditure);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Failed to fetch monthly expenditure' });
+    }
+});
+
+// API route to get expenditure by store
+router.get('/expenditure-by-store', async (req, res) => {
+    const userId = req.session.userId;
+    if (!userId) {
+        return res.status(401).json({ message: "User not authenticated" });
+    }
+
+    try {
+        const expenditureByStore = await Receipt.findAll({
+            where: { userId },
+            attributes: [
+                'StoreName',
+                [sequelize.fn('sum', sequelize.col('TotalAmount')), 'total_spent']
+            ],
+            group: 'StoreName',
+            order: [['StoreName', 'ASC']],
+        });
+        res.json(expenditureByStore);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Failed to fetch expenditure by store' });
     }
 });
 
