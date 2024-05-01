@@ -1,4 +1,4 @@
-// this is where all the seperate models will be imported.
+// this is where all the seperate models will be imported. testline
 const Sequelize = require('sequelize');
 
 // create sequelize instance with database info
