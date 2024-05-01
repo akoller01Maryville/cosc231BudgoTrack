@@ -4,16 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile Page</title>
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <!-- reset above, style below -->
+    <link rel="stylesheet" href="stylesheets/styles.css">
 </head>
 
 <body>
-    <button onclick="history.back()">Return</button>
-    <h2>Profile Page</h2>
+    <header>
+        <button onclick="history.back()">Return</button>
+        <h1>Profile Page</h1>
+        <div></div>
+    </header>
 
     <div id="userDetails"></div>
 
-
     <script src="javascripts/displayUserDetails.js"></script>
+    <script src="javascripts/authCheck.js"></script>
 </body>
 
 </html>

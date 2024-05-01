@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
             unique: false,
             allowNull: false,
         },
-        // TODO: add other columns for this table
     });
 
     return Receipt;

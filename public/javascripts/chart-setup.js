@@ -1,51 +1,114 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var ctx1 = document.getElementById('chart1').getContext('2d');
-    var myChart1 = new Chart(ctx1, {
-        type: 'bar', // bar graph example
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+    // Fetch monthly expenditure data
+    fetch('/api/expenditure-by-month')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-        }
-    });
+            return response.json();
+        })
+        .then(data => {
+            const monthlyTotals = data.reduce((acc, receipt) => {
+                const month = receipt.PurchaseDate.slice(0, 7);
+                if (!acc[month]) {
+                    acc[month] = 0;
+                }
+                acc[month] += parseFloat(receipt.TotalAmount);
+                return acc;
+            }, {});
 
-    // Second chart
-    var ctx2 = document.getElementById('chart2').getContext('2d');
-    var myChart2 = new Chart(ctx2, {
-        type: 'pie', // pie chart example
-        data: {
-            labels: ['Red', 'Blue', 'Yellow'],
-            datasets: [{
-                label: 'Dataset 1',
-                data: [300, 50, 100, 150],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.5)',
-                    'rgba(54, 162, 24, 1.0)'
-                ],
-                hoverOffset: 4
-            }]
-        },
-    });
+            let labels = Object.keys(monthlyTotals);
+            let datapoints = Object.values(monthlyTotals);
+
+            labels = labels.reverse();
+            datapoints = datapoints.reverse();
+
+            const ctx1 = document.getElementById('chart1').getContext('2d');
+            const myChart1 = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Amount',
+                        data: datapoints.reverse(),
+                        backgroundColor: 'rgba(79, 176, 81, 1)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Monthly Spending',
+                            padding: {
+                                top: 10,
+                                bottom: 10,
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    return 'Amount: $' + tooltipItem.raw.toFixed(2);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toFixed(2);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching monthly data:', error));
+
+
+    // Fetch expenditure by store
+    fetch('/api/expenditure-by-store')
+        .then(response => response.json())
+        .then(data => {
+            const ctx2 = document.getElementById('chart2').getContext('2d');
+            const myChart2 = new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    labels: data.map(item => item.StoreName),
+                    datasets: [{
+                        data: data.map(item => item.total_spent),
+                        backgroundColor: data.map(() => `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 1)`),
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Spending Per Store',
+                            padding: {
+                                top: 10,
+                                bottom: 10,
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    // Ensure proper access to the tooltip item's context
+                                    let label = tooltipItem.chart.data.labels[tooltipItem.dataIndex];
+                                    let value = tooltipItem.dataset.data[tooltipItem.dataIndex];
+                                    return `${label}: $${parseFloat(value).toFixed(2)}`; // Ensure proper formatting
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+        })
+        .catch(error => console.error('Error fetching store data:', error));
 });

@@ -12,7 +12,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
 
         if (response.ok) {
             // Redirect to profile or another page on successful login
-            window.location.href = '/profile.html';
+            window.location.href = '/chart.html';
         } else {
             throw new Error('Failed to login');
         }
