@@ -92,10 +92,15 @@ router.get('/expenditure-by-month', async (req, res) => {
                 [sequelize.fn('date_trunc', 'month', sequelize.col('PurchaseDate')), 'month'],
                 [sequelize.fn('sum', sequelize.col('TotalAmount')), 'total_spent']
             ],
-            group: 'month',
-            order: [['month', 'ASC']],
+            group: [sequelize.fn('date_trunc', 'month', sequelize.col('PurchaseDate'))],
+            order: [[sequelize.fn('date_trunc', 'month', sequelize.col('PurchaseDate')), 'ASC']]
         });
-        res.json(monthlyExpenditure);
+        res.json(monthlyExpenditure.map(item => {
+            return {
+                month: item.dataValues.month,
+                total_spent: parseFloat(item.dataValues.total_spent)
+            };
+        }));
     } catch (error) {
         console.error('Error:', error);
         res.status(500).json({ error: 'Failed to fetch monthly expenditure' });

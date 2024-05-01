@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             // Assuming the data you need is in an array inside data object under the key "expenditures"
-            const expenditures = data.expenditures;
+            const expenditures = data.total_spent;
             const ctx1 = document.getElementById('chart1').getContext('2d');
             const myChart1 = new Chart(ctx1, {
                 type: 'bar',
