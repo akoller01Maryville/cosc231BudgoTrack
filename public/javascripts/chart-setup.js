@@ -8,16 +8,26 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
-            // Assuming the data you need is in an array inside data object under the key "expenditures"
-            const expenditures = data.total_spent;
+            const monthlyTotals = data.reduce((acc, receipt) => {
+                const month = receipt.PurchaseDate.slice(0, 7);
+                if (!acc[month]) {
+                    acc[month] = 0;
+                }
+                acc[month] += parseFloat(receipt.TotalAmount);
+                return acc;
+            }, {});
+
+            const labels = Object.keys(monthlyTotals);
+            const datapoints = Object.values(monthlyTotals);
+
             const ctx1 = document.getElementById('chart1').getContext('2d');
             const myChart1 = new Chart(ctx1, {
                 type: 'bar',
                 data: {
-                    labels: expenditures.map(item => item.month),
+                    labels: labels,
                     datasets: [{
                         label: 'Monthly Spending',
-                        data: expenditures.map(item => item.total_spent),
+                        data: datapoints,
                         backgroundColor: 'rgba(54, 162, 235, 0.2)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 1
