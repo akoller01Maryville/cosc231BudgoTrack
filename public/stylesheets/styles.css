@@ -128,9 +128,11 @@ footer {
     display: flex;
     flex-direction: column; /* stack vertically */
     padding: 15px;
-    border: 1px;
+    border: 1px solid #ccc;
     border-radius: 5px; /* rounded corners */
     text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .recentStoreName, .recentTotalAmount, .recentPurchaseDate {
@@ -298,8 +300,8 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px; /* between each grid */
     padding: 20px;
-    margin: 3% 30%;
-
+    margin: 0 auto;
+    width: 90%;
 }
 
 #newReceiptButton {

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
             receipts.forEach(receipt => {
                 // Create a container for each receipt
                 const receiptContainer = document.createElement('div');
-                receiptContainer.className = 'receipt';
+                receiptContainer.className = 'recentReceipt';
 
                 // Create and append store name
                 const storeName = document.createElement('div');
